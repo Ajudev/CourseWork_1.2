@@ -17,7 +17,7 @@ public class bank_account {
     private long accountNo;                                                                     
     private double accountBalance;
     private user user;
-    public bank_account(long accountNo, double accountBalance)                                       
+    public bank_account(long accountNo, double accountBalance)                                        
     {
         this.accountNo = accountNo;
         this.accountBalance = accountBalance;   
@@ -30,16 +30,16 @@ public class bank_account {
     {
         return this.accountBalance;
     }   
-    public void deposit(double value,String u)                                               
+    public void deposit(double value,String u) throws IOException                                              
     {
-        System.out.println("The user "+u+" deposits an amount of "+value);
+        System.out.println("The user-"+u+" deposits an amount of "+value);
         accountBalance+=value;
         String v = Double.toString(value);
         String a = Double.toString(accountBalance); 
         try {
             FileWriter fw = new FileWriter("log.txt",true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("User name: "+u+"Amount deposited: "+v);
+            bw.write("User name"+u+"Amount deposited: "+v);
             bw.newLine();
             bw.write("New Account Balance: "+a);
             bw.newLine();
@@ -49,7 +49,7 @@ public class bank_account {
             ex.toString();
         }
     }
-    public void withdraw(double value,String u)
+    public void withdraw(double value,String u) throws IOException
     {
         System.out.println("The user-"+u+" withdraws an amount of "+value);
         accountBalance-=value;
