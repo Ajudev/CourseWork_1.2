@@ -35,7 +35,7 @@ public class CourseWork_12 {
         USER.add(new user("Hank","Schrader",bA,tran_4));
         while(true){
             System.out.println("Welcome to the application");
-            System.out.println("Press 1 to create a new bank account, press 2 to create a user, Press 3 to run simulation, Press 4 to exit, Press 6 to display the arraylist");
+            System.out.println("Press 1 to create a new bank account, press 2 to create a user, Press 3 to run simulation, Press 4 to exit");
             int choice=s.nextInt();
             if (choice==1){                                 //Creates a bank account
                 long accountno=9876543210L;
@@ -47,7 +47,7 @@ public class CourseWork_12 {
                     String name=s.next();
                     System.out.println("Please enter your surname: ");
                     String surname=s.next();
-                    ArrayList<Double> transaction_List=new ArrayList<>();                                                                  //temp Arraylist to be filled by user
+                    ArrayList<Double> transaction_List=new ArrayList<>();                                                                  //temp transactions Arraylist to be filled by user
                     while (true){      //Recording his transactions
                         System.out.println("Please enter the transactions you wish to make with a - before the amount for withdrawing the amount");
                         double amount=s.nextDouble();
