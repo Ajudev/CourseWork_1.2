@@ -30,7 +30,7 @@ public class bank_account {
     {
         return this.accountBalance;
     }   
-    public synchronized void deposit(double value,String u) throws IOException                                              
+    public void deposit(double value,String u) throws IOException                                              
     {
         System.out.println("The user-"+u+" deposits an amount of "+value);
         accountBalance+=value;
@@ -49,7 +49,7 @@ public class bank_account {
             ex.toString();
         }
     }
-    public synchronized void withdraw(double value,String u) throws IOException
+    public void withdraw(double value,String u) throws IOException
     {
         System.out.println("The user-"+u+" withdraws an amount of "+value);
         accountBalance-=value;
