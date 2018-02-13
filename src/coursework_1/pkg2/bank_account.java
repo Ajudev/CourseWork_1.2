@@ -14,7 +14,7 @@ import java.io.IOException;
  * @author Lenovo
  */
 public class bank_account {
-    private long accountNo;                                                                     
+    private long accountNo;                                             // Attributes                        
     private double accountBalance;
     private user user;
     public bank_account(long accountNo, double accountBalance)                                        
