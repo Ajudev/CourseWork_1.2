@@ -41,7 +41,7 @@ public class user extends Thread {
                 }
             }
             if(bankAccount.getAccountBalance()<=0){
-                System.out.println("The account balance is"+bankAccount.getAccountBalance()+"To withdraw kindly deposit more");
+                System.out.println("You account balance is"+bankAccount.getAccountBalance()+"which is very low please deposit more money to withdraw");
                 break;
             }
             else{

@@ -32,14 +32,14 @@ public class bank_account {
     }   
     public void deposit(double value,String u) throws IOException                                              
     {
-        System.out.println("The user-"+u+" deposits an amount of "+value);
+        System.out.println("User Name: "+u+" deposits an amount of: "+value);
         accountBalance+=value;
         String v = Double.toString(value);
         String a = Double.toString(accountBalance); 
         try {
             FileWriter fw = new FileWriter("log.txt",true);
             BufferedWriter bw = new BufferedWriter(fw);
-            bw.write("User name"+u+"Amount deposited: "+v);
+            bw.write("User name: "+u+"Amount deposited: "+v);
             bw.newLine();
             bw.write("New Account Balance: "+a);
             bw.newLine();
@@ -51,8 +51,8 @@ public class bank_account {
     }
     public void withdraw(double value,String u) throws IOException
     {
-        System.out.println("The user-"+u+" withdraws an amount of "+value);
-        accountBalance-=value;
+        System.out.println("User Name: "+u+" withdraws an amount of: "+value);
+        accountBalance-=-(value);
         String v = Double.toString(value);
         String a = Double.toString(accountBalance);
         try{
