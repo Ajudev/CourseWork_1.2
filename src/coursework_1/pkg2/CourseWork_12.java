@@ -20,12 +20,12 @@ public class CourseWork_12 {
         ArrayList<user> USER=new ArrayList<>();                                                         
         int i=4;                                                                                        
         bank_account bankacc=new bank_account(9876543210L,1980);                                                  
-        ArrayList<Double> tran_1 = new ArrayList<>();
+        ArrayList<Double> tran_1 = new ArrayList<>();                           //Creating Arraylists to store the transactions
         ArrayList<Double> tran_2 = new ArrayList<>();
         ArrayList<Double> tran_3 = new ArrayList<>();
         ArrayList<Double> tran_4 = new ArrayList<>();
         bank_account bA = new bank_account(9876543210L,1980.0);
-        tran_1.addAll(Arrays.asList(50.0,10.0,-20.0,10.0,-20.0,20.0,10.0,50.0,10.0,10.0,10.0,50.0));
+        tran_1.addAll(Arrays.asList(50.0,10.0,-20.0,10.0,-20.0,20.0,10.0,50.0,10.0,10.0,10.0,50.0));  //Storing transactions
         tran_2.addAll(Arrays.asList(20.0,20.0,-20.0,50.0,-20.0,10.0,50.0,50.0,-20.0,10.0,10.0));
         tran_3.addAll(Arrays.asList(50.0,10.0,10.0,-10.0,-10.0,50.0,20.0,-10.0,-20.0));
         tran_4.addAll(Arrays.asList(50.0,10.0,-20.0,20.0,10.0,-20.0));
@@ -37,18 +37,18 @@ public class CourseWork_12 {
             System.out.println("Welcome to the application");
             System.out.println("Press 1 to create a new bank account, press 2 to create a user, Press 3 to run simulation, Press 4 to exit, Press 6 to display the arraylist");
             int choice=s.nextInt();
-            if (choice==1){
+            if (choice==1){                                 //Creates a bank account
                 long accountno=9876543210L;
                 System.out.println("The Bank account with "+accountno+" and an account balance of $1980 has been created");
             }
-            if(choice==2){
+            if(choice==2){                                  //Creates a user and adds him to a bank account
                 while (true){
                     System.out.println("Please enter your name:");
                     String name=s.next();
                     System.out.println("Please enter your surname: ");
                     String surname=s.next();
                     ArrayList<Double> transaction_List=new ArrayList<>();                                                                  //temp Arraylist to be filled by user
-                    while (true){
+                    while (true){      //Recording his transactions
                         System.out.println("Please enter the transactions you wish to make with a - before the amount for withdrawing the amount");
                         double amount=s.nextDouble();
                         System.out.println("Do you wish to write more transactions type yes or no: ");
@@ -66,7 +66,7 @@ public class CourseWork_12 {
                             break;
                         }   
                     }
-                    USER.add(new user(name,surname,bankacc,transaction_List));                                                            
+                    USER.add(new user(name,surname,bankacc,transaction_List));    //Creating a new user with bank account and transaction lists                                                        
                     i++;                                                                                                    
                     System.out.println("Do you wish to add more users type yes or no: ");
                     String c1=s.next(); 
@@ -83,13 +83,13 @@ public class CourseWork_12 {
                     }
                 }
             }
-            if(choice==3){
-                System.out.println("Press 4 to exit the program once the simulation is done");
+            if(choice==3){            //Runs the simulation 
+                System.out.println("Press 4 to exit the program once the simulation is done"); //Starting all threads using for loop
                 for(int j=0;j<i;j++){
                     USER.get(j).start();                                                                                    
                 }
             }
-            if (choice==4){
+            if (choice==4){           //Exit the program
                 System.exit(0);                                                                                             
             }
         }
